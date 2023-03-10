@@ -23,7 +23,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --all --watchAll=false",
     "eject": "react-scripts eject",
     "e2e": "playwright test",
     "lint": "eslint --fix --ext .ts,.tsx ./src",
@@ -31,7 +31,8 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "yarn lint"
+      "yarn lint",
+      "react-scripts test --env=jsdom --all --watchAll=false --bail -u --passWithNoTests"
     ]
   },
   "eslintConfig": {
