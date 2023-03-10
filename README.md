@@ -16,6 +16,39 @@ Request an invite page of Broccoli & Co. is powered by [Create React App](https:
 - Jest (unit test)
 - Playwright (e2e)
 
+## Installation
+
+The repo is scaffolded under Node `16.19.1` so ensure you have the right version to avoid package dependency errors during installation. You can simply install the right node version using `nvm`
+
+```
+nvm i 16
+nvm use 16
+```
+
+```
+node -v
+v16.19.1
+```
+
+install `yarn`
+
+```
+npm i -g yarn
+```
+
+clone the repo
+
+```
+git clone git@github.com:LBrian/broccoli-co.git
+```
+
+install packages
+
+```
+cd broccoli-co
+yarn
+```
+
 ## Run the application locally
 
 ### `yarn start`
