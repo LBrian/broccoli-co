@@ -1,7 +1,7 @@
 import type { ChangeEvent, FC, PropsWithChildren } from 'react'
 
 type Props = {
-  name?: string
+  name: string
   isOpen: boolean
   onClose: () => void
   dismissible?: boolean
@@ -16,7 +16,13 @@ const Modal: FC<PropsWithChildren<Props>> = ({ name, isOpen = false, onClose, di
 
   return (
     <>
-      <input type='checkbox' className='modal-toggle' checked={isOpen} onChange={handleChange} />
+      <input
+        data-testid='modal-toggle'
+        type='checkbox'
+        className='modal-toggle'
+        checked={isOpen}
+        onChange={handleChange}
+      />
       <label className='modal cursor-pointer'>
         <div data-testid={name} className='modal-box w-auto py-16 modal-middle'>
           {dismissible && (
@@ -24,7 +30,7 @@ const Modal: FC<PropsWithChildren<Props>> = ({ name, isOpen = false, onClose, di
               aria-label='Close'
               data-testid='modal-close'
               className='btn btn-sm btn-circle absolute right-2 top-2'
-              onClick={onClose}
+              onClick={() => onClose()}
             >
               ✕
             </button>

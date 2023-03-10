@@ -1,7 +1,7 @@
 import type { ComponentProps } from 'react'
 import Modal from '../Modal'
 
-const ConfirmModal = ({ onClose, ...props }: Omit<ComponentProps<typeof Modal>, 'children'>) => {
+const ConfirmModal = ({ onClose, ...props }: Omit<ComponentProps<typeof Modal>, 'name' | 'children'>) => {
   return (
     <Modal name='request-success' {...props} onClose={onClose}>
       <h3 className='font-bold text-lg text-success'>All Done!</h3>

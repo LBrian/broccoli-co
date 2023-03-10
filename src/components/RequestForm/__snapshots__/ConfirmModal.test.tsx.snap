@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders ConfirmModal component 1`] = `
+<div
+  class="modal-box w-auto py-16 modal-middle"
+  data-testid="request-success"
+>
+  <h3
+    class="font-bold text-lg text-success"
+  >
+    All Done!
+  </h3>
+  <p
+    class="py-4 text-success"
+  >
+    Once you are selected for a chance to get an invite, we will send it to your email!
+  </p>
+  <div
+    class="modal-action"
+  >
+    <button
+      aria-label="Confirm"
+      class="btn btn-success"
+      data-testid="confirm"
+    >
+      Ok
+    </button>
+  </div>
+</div>
+`;

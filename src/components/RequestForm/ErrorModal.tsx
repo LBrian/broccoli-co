@@ -1,7 +1,7 @@
 import type { ComponentProps } from 'react'
 import Modal from '../Modal'
 
-const ErrorModal = ({ onClose, children, ...props }: ComponentProps<typeof Modal>) => {
+const ErrorModal = ({ onClose, children, ...props }: Omit<ComponentProps<typeof Modal>, 'name'>) => {
   return (
     <Modal name='request-error' {...props} onClose={onClose}>
       <h3 className='font-bold text-lg text-error'>Oops!</h3>

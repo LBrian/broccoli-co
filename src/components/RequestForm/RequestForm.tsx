@@ -10,7 +10,12 @@ type FormFields = {
   confirmEmail: string
 }
 
-const RequestForm = ({ ...props }: Omit<ComponentProps<typeof Modal>, 'isOpen' | 'children'>) => {
+type Props = { onSubmit?: (data: FormFields) => void } & Omit<
+  ComponentProps<typeof Modal>,
+  'name' | 'isOpen' | 'children'
+>
+
+const RequestForm = ({ ...props }: Props) => {
   const [loading, setLoading] = useState(false)
   const [status, setStatus] = useState(0)
   const [error, setError] = useState<string>()
@@ -26,8 +31,12 @@ const RequestForm = ({ ...props }: Omit<ComponentProps<typeof Modal>, 'isOpen' |
     message: 'Incorrect email format'
   }
 
-  const onSubmit = async ({ fullName: name, email }: FormFields) => {
+  const onSubmit = async (data: FormFields) => {
+    const { fullName: name, email } = data
+
     setLoading(true)
+
+    props.onSubmit?.(data)
 
     const res = await fetch('https://l94wc2001h.execute-api.ap-southeast-2.amazonaws.com/prod/fake-auth', {
       method: 'POST',
