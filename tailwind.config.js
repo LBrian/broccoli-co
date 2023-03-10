@@ -4,7 +4,12 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        // Target mobile landscape viewport
+        'short': { 'raw': '(max-height: 414px)' }
+      }
+    },
   },
   plugins: [require("daisyui")]
 }
